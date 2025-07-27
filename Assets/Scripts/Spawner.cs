@@ -3,63 +3,52 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private UnityEngine.Object _cube;
-    [SerializeField] private float _scaleDecrease=2;
-    [SerializeField] private int _spawnChance=100;
+    [SerializeField] private float _scaleDecrease = 2;
+    [SerializeField] private int _spawnChanceDecrease = 2;
+    [SerializeField] private int _spawnAmountMin = 2;
+    [SerializeField] private int _spawnAmountMax = 6;
     [SerializeField] private ClickTrigger _clickTrigger;
+    [SerializeField] private Cube _cube;
 
     public event Action spawnComplete;
 
     private void OnEnable()
     {
-        _clickTrigger.clicked += TrySpawn;
+        _clickTrigger.Ñlicked += TrySpawn;
     }
 
     private void OnDisable()
     {
-        _clickTrigger.clicked -= TrySpawn;
-    }
-
-    private void Clicked()
-    {  
-        Destroy(_cube);
+        _clickTrigger.Ñlicked -= TrySpawn;
     }
 
     private void DecreaseScale(float scaleDecrease)
     {
         transform.localScale /= scaleDecrease;
     }
-
-    private void DecreaseNextSpawnChance()
-    {
-        int baseCoefficient = 2;
-        _spawnChance /= baseCoefficient;
-    }
-
+    
     private void TrySpawn()
     {
-        Debug.Log(".");
         int spawnRoll = Utils.GenerateRandomNumber(0, 100);
-        Debug.Log("spawnRoll" + spawnRoll);
-        Debug.Log("_spawnChance" + _spawnChance);
+        int _spawnChance = _cube.SpawnChance;
 
         if (_spawnChance >= spawnRoll)
         {
             DecreaseScale(_scaleDecrease);
-            DecreaseNextSpawnChance();
-
-            int spawnAmount = Utils.GenerateRandomNumber(2, 6);
-            Debug.Log("spawnAmount" + spawnAmount);
+            int newCubeSpawnChance = _spawnChance / _spawnChanceDecrease;
+            int spawnAmount = Utils.GenerateRandomNumber(_spawnAmountMin, _spawnAmountMax);
 
             for (int i = 0; i < spawnAmount; i++)
             {
-                Instantiate(transform.gameObject, RandomiseSpawnLocation(), Quaternion.identity);
+                GameObject newCubeObject = Instantiate(transform.gameObject, RandomiseSpawnLocation(), Quaternion.identity);
+                Cube newCube = newCubeObject.GetComponent<Cube>();
+                newCube.SetSpawnChance(newCubeSpawnChance);
             }
 
-           spawnComplete?.Invoke();
+            spawnComplete?.Invoke();
         }
 
-        Destroy(_cube);
+        Destroy(_cube._cube);
     }
 
     private Vector3 RandomiseSpawnLocation()

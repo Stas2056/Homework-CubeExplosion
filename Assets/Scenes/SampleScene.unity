@@ -140,6 +140,7 @@ GameObject:
   - component: {fileID: 15248753}
   - component: {fileID: 15248752}
   - component: {fileID: 15248751}
+  - component: {fileID: 15248755}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Untagged
@@ -272,10 +273,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7450a2c139b286489b1db847cbc2309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cube: {fileID: 15248745}
   _scaleDecrease: 2
-  _spawnChance: 100
+  _spawnChanceDecrease: 2
+  _spawnAmountMin: 2
+  _spawnAmountMax: 6
   _clickTrigger: {fileID: 15248754}
+  _cube: {fileID: 15248755}
 --- !u!114 &15248752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -314,6 +317,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bfb2539215602024293496cc6ded8ee8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &15248755
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 15248745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cac8c6909372f4f8fdc57f152cc4d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cube: {fileID: 15248745}
+  _spawnChance: 100
+  _spawner: {fileID: 15248751}
 --- !u!1 &16639805
 GameObject:
   m_ObjectHideFlags: 0
@@ -436,6 +454,7 @@ GameObject:
   - component: {fileID: 194121300}
   - component: {fileID: 194121299}
   - component: {fileID: 194121298}
+  - component: {fileID: 194121307}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -455,10 +474,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7450a2c139b286489b1db847cbc2309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cube: {fileID: 194121297}
   _scaleDecrease: 2
-  _spawnChance: 100
+  _spawnChanceDecrease: 2
+  _spawnAmountMin: 2
+  _spawnAmountMax: 6
   _clickTrigger: {fileID: 194121301}
+  _cube: {fileID: 194121307}
 --- !u!114 &194121299
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -610,6 +631,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &194121307
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 194121297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cac8c6909372f4f8fdc57f152cc4d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cube: {fileID: 194121297}
+  _spawnChance: 100
+  _spawner: {fileID: 194121298}
 --- !u!1 &205230005
 GameObject:
   m_ObjectHideFlags: 0
@@ -908,7 +944,7 @@ Transform:
   m_GameObject: {fileID: 705507993}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 30, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -999,13 +1035,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.16042997, y: 0.37686962, z: -0.066452265, w: 0.9098438}
-  m_LocalPosition: {x: -6, y: 7, z: -6}
+  m_LocalRotation: {x: 0.19996412, y: 0.3736123, z: -0.08282785, w: 0.90198}
+  m_LocalPosition: {x: -7, y: 8, z: -7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 20, y: 45, z: 0}
+  m_LocalEulerAnglesHint: {x: 25, y: 45, z: 0}
 --- !u!1 &1087245960
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,6 +1306,7 @@ GameObject:
   - component: {fileID: 1839743589}
   - component: {fileID: 1839743588}
   - component: {fileID: 1839743587}
+  - component: {fileID: 1839743596}
   m_Layer: 0
   m_Name: Cube (2)
   m_TagString: Untagged
@@ -1289,10 +1326,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d7450a2c139b286489b1db847cbc2309, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _cube: {fileID: 1839743586}
   _scaleDecrease: 2
-  _spawnChance: 100
+  _spawnChanceDecrease: 2
+  _spawnAmountMin: 2
+  _spawnAmountMax: 6
   _clickTrigger: {fileID: 1839743590}
+  _cube: {fileID: 1839743596}
 --- !u!114 &1839743588
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1444,6 +1483,21 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1839743596
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1839743586}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b1cac8c6909372f4f8fdc57f152cc4d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _cube: {fileID: 1839743586}
+  _spawnChance: 100
+  _spawner: {fileID: 1839743587}
 --- !u!1 &2080880719
 GameObject:
   m_ObjectHideFlags: 0

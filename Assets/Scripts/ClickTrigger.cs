@@ -3,10 +3,10 @@ using UnityEngine;
 
 public class ClickTrigger : MonoBehaviour
 {
-   public event Action clicked;
+   public event Action Ñlicked;
 
     private void OnMouseUpAsButton()
     {
-        clicked?.Invoke();
+        Ñlicked?.Invoke();
     }
 }
