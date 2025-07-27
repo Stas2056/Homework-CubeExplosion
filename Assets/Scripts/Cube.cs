@@ -10,8 +10,6 @@ public class Cube : MonoBehaviour
    
     public void SetSpawnChance(int SpawnChance)
     {
-        Debug.Log("cube ivent SpawnChance"+ _spawnChance);
         _spawnChance =SpawnChance;
-        Debug.Log("cube ivent 2 SpawnChance" + _spawnChance);
     }
 }
