@@ -8,34 +8,17 @@ public class Exploder : MonoBehaviour
 
     private void OnEnable()
     {
-        _spawner.spawnComplete += Explode;
+        _spawner.SpawnComplete += Explode;
     }
 
     private void OnDisable()
     {
-        _spawner.spawnComplete -= Explode;
+        _spawner.SpawnComplete -= Explode;
     }
 
-    private List<Rigidbody> GetSpawnedCubes()
-    {
-        Collider[] hits = Physics.OverlapBox(transform.localPosition, transform.localScale);
-
-        List<Rigidbody> spawnedCubes = new List<Rigidbody>();
-
-        foreach (Collider hit in hits)
-        {
-            if (hit.attachedRigidbody != null)
-            {
-                spawnedCubes.Add(hit.attachedRigidbody);
-            }
-        }
-
-        return spawnedCubes;
-    }
-
-    private void Explode()
-    {
-        foreach (Rigidbody spawnedCube in GetSpawnedCubes())
+    private void Explode(List<Rigidbody> rigidbodies)
+    {       
+        foreach (Rigidbody spawnedCube in rigidbodies)
         {
             spawnedCube.AddExplosionForce(_explosionForce, transform.localPosition, transform.localScale.x);
         }
