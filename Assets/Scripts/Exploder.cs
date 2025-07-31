@@ -4,16 +4,16 @@ using UnityEngine;
 public class Exploder : MonoBehaviour
 {
     [SerializeField] private int _explosionForce=1500;
-    [SerializeField] private Spawner _spawner;
+    [SerializeField] private Splitter _splitter;
 
     private void OnEnable()
     {
-        _spawner.SpawnComplete += Explode;
+        _splitter.SpawnComplete += Explode;
     }
 
     private void OnDisable()
     {
-        _spawner.SpawnComplete -= Explode;
+        _splitter.SpawnComplete -= Explode;
     }
 
     private void Explode(List<Rigidbody> rigidbodies)

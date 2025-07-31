@@ -3,24 +3,28 @@
   "WorkspaceRootPath": "E:\\My projects\\CubeExplosion\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|e:\\my projects\\cubeexplosion\\assets\\scripts\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|E:\\My projects\\CubeExplosion\\assets\\scripts\\cube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|E:\\My projects\\CubeExplosion\\assets\\scripts\\exploder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\exploder.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|E:\\My projects\\CubeExplosion\\assets\\scripts\\clicktrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\clicktrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|e:\\my projects\\cubeexplosion\\assets\\scripts\\cube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\cube.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|E:\\My projects\\CubeExplosion\\assets\\scripts\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\spawner.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|E:\\My projects\\CubeExplosion\\assets\\scripts\\splitter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\splitter.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|E:\\My projects\\CubeExplosion\\assets\\scripts\\colorrandomiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\colorrandomiser.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|E:\\My projects\\CubeExplosion\\assets\\scripts\\clicktrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|solutionrelative:assets\\scripts\\clicktrigger.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{2F964DA8-4ADF-0253-0050-C8EC925C989D}|Assembly-CSharp.csproj|E:\\My projects\\CubeExplosion\\assets\\scripts\\utils.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -34,20 +38,31 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 0,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "Splitter.cs",
+              "DocumentMoniker": "E:\\My projects\\CubeExplosion\\Assets\\Scripts\\Splitter.cs",
+              "RelativeDocumentMoniker": "Assets\\Scripts\\Splitter.cs",
+              "ToolTip": "E:\\My projects\\CubeExplosion\\Assets\\Scripts\\Splitter.cs",
+              "RelativeToolTip": "Assets\\Scripts\\Splitter.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-07-31T13:52:40.93Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Spawner.cs",
               "DocumentMoniker": "E:\\My projects\\CubeExplosion\\Assets\\Scripts\\Spawner.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Spawner.cs",
               "ToolTip": "E:\\My projects\\CubeExplosion\\Assets\\Scripts\\Spawner.cs",
               "RelativeToolTip": "Assets\\Scripts\\Spawner.cs",
-              "ViewState": "AgIAADEAAAAAAAAAAAAkwBIAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T17:17:55.436Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T17:17:55.436Z"
             },
             {
               "$type": "Document",
@@ -57,36 +72,35 @@
               "RelativeDocumentMoniker": "Assets\\Scripts\\Cube.cs",
               "ToolTip": "E:\\My projects\\CubeExplosion\\Assets\\Scripts\\Cube.cs",
               "RelativeToolTip": "Assets\\Scripts\\Cube.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAUAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAApAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-25T20:48:08.008Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 0,
               "Title": "Exploder.cs",
               "DocumentMoniker": "E:\\My projects\\CubeExplosion\\Assets\\Scripts\\Exploder.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Exploder.cs",
               "ToolTip": "E:\\My projects\\CubeExplosion\\Assets\\Scripts\\Exploder.cs",
               "RelativeToolTip": "Assets\\Scripts\\Exploder.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAhAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-07-23T17:26:10.991Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 5,
               "Title": "ClickTrigger.cs",
               "DocumentMoniker": "E:\\My projects\\CubeExplosion\\Assets\\Scripts\\ClickTrigger.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\ClickTrigger.cs",
               "ToolTip": "E:\\My projects\\CubeExplosion\\Assets\\Scripts\\ClickTrigger.cs",
               "RelativeToolTip": "Assets\\Scripts\\ClickTrigger.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAeAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-07-23T16:42:12.697Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-07-23T16:42:12.697Z"
             },
             {
               "$type": "Document",
@@ -102,7 +116,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Utils.cs",
               "DocumentMoniker": "E:\\My projects\\CubeExplosion\\Assets\\Scripts\\Utils.cs",
               "RelativeDocumentMoniker": "Assets\\Scripts\\Utils.cs",
