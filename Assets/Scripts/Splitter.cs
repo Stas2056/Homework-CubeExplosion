@@ -1,36 +1,23 @@
-using System;
 using System.Collections.Generic;
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class Splitter : MonoBehaviour
 {
-    [SerializeField] private ClickTrigger _clickTrigger;
     [SerializeField] private Spawner _spawner;
-    [SerializeField] private Cube _cube;
+    [SerializeField] private Exploder _exploder;
 
-    public event Action<List<Rigidbody>> SpawnComplete;
-
-    private void OnEnable()
+    private void OnMouseUpAsButton()
     {
-        _clickTrigger.Clicked += TrySpawn;
-    }
-
-    private void OnDisable()
-    {
-        _clickTrigger.Clicked -= TrySpawn;
+        TrySpawn();
     }
 
     private void TrySpawn()
     {
-        int spawnRoll = Utils.GenerateRandomNumber(0, 100);
-        int spawnChance = _cube.SpawnChance;
+        List<Rigidbody> rigidbodies = _spawner.Spawn();
 
-        if (spawnChance >= spawnRoll)
-        {
-            SpawnComplete?.Invoke(_spawner.Spawn(spawnChance, _cube));
-        }
+        if (rigidbodies != null)
+            _exploder.Explode(rigidbodies);
 
-        Destroy(_cube.GameObject());
+        Destroy(gameObject);
     }
 }

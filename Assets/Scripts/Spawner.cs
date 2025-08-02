@@ -10,36 +10,48 @@ public class Spawner : MonoBehaviour
     [SerializeField] private int _spawnChanceDecrease = 2;
     [SerializeField] private int _spawnAmountMin = 2;
     [SerializeField] private int _spawnAmountMax = 6;
+    [SerializeField] private Cube _cube;
 
-    public List<Rigidbody> Spawn(int spawnChance, Cube cube)
+    public List<Rigidbody> Spawn()
     {
-        DecreaseScale(_scaleDecrease);
-        int newCubeSpawnChance = spawnChance / _spawnChanceDecrease;
-        int spawnAmount = Utils.GenerateRandomNumber(_spawnAmountMin, _spawnAmountMax);
+        int minChance = 0;
+        int maxChance = 100;
 
-        List<Rigidbody> spawnedCubesRigidbodies = new List<Rigidbody>();
+        int spawnRoll = Utils.GenerateRandomNumber(minChance, maxChance);
+        int spawnChance = _cube.SpawnChance;
 
-        for (int i = 0; i < spawnAmount; i++)
+        if (spawnChance >= spawnRoll)
         {
-            GameObject newCubeObject = Instantiate(cube.gameObject, transform.localPosition,
-                                                   Quaternion.identity);
+            DecreaseScale(_scaleDecrease);
+            int newCubeSpawnChance = spawnChance / _spawnChanceDecrease;
+            int spawnAmount = Utils.GenerateRandomNumber(_spawnAmountMin, _spawnAmountMax);
 
-            if (newCubeObject.TryGetComponent(out Cube newCube))
+            List<Rigidbody> spawnedCubesRigidbodies = new List<Rigidbody>();
+
+            for (int i = 0; i < spawnAmount; i++)
             {
-                newCube.Init(newCubeSpawnChance);
+                GameObject newCubeObject = Instantiate(_cube.gameObject, transform.localPosition,
+                                                       Quaternion.identity);
 
-                if (newCube.TryGetComponent(out Rigidbody newCubeRigidbody))
+                if (newCubeObject.TryGetComponent(out Cube newCube))
                 {
-                    spawnedCubesRigidbodies.Add(newCubeRigidbody);
+                    newCube.Init(newCubeSpawnChance);
+
+                    if (newCube.TryGetComponent(out Rigidbody newCubeRigidbody))
+                    {
+                        spawnedCubesRigidbodies.Add(newCubeRigidbody);
+                    }
                 }
             }
+
+            return spawnedCubesRigidbodies;
         }
 
-        return spawnedCubesRigidbodies;
+        return null;
     }
 
     private void DecreaseScale(float scaleDecrease)
     {
         transform.localScale /= scaleDecrease;
     }
-}    
+}

@@ -60,7 +60,6 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\ColorRandomiser.cs" />
     <Compile Include="Assets\Scripts\Spawner.cs" />
-    <Compile Include="Assets\Scripts\ClickTrigger.cs" />
     <Compile Include="Assets\Scripts\Utils.cs" />
     <Compile Include="Assets\Scripts\Splitter.cs" />
     <Compile Include="Assets\Scripts\Cube.cs" />
