@@ -5,19 +5,25 @@ public class Splitter : MonoBehaviour
 {
     [SerializeField] private Spawner _spawner;
     [SerializeField] private Exploder _exploder;
+    [SerializeField] private RaycastTrigger _raycastTrigger;
 
-    private void OnMouseUpAsButton()
+    private void OnEnable()
     {
-        TrySpawn();
+        _raycastTrigger.CubeClicked += TrySpawn;
     }
 
-    private void TrySpawn()
+    private void OnDisable()
     {
-        List<Rigidbody> rigidbodies = _spawner.Spawn();
+        _raycastTrigger.CubeClicked -= TrySpawn;
+    }
+
+    private void TrySpawn(Cube cube)
+    {
+        List<Rigidbody> rigidbodies = _spawner.Spawn(cube);
 
         if (rigidbodies != null)
-            _exploder.Explode(rigidbodies);
+            _exploder.Explode(cube, rigidbodies);
 
-        Destroy(gameObject);
+        Destroy(cube.gameObject);
     }
 }

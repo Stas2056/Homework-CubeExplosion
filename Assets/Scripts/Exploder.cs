@@ -5,11 +5,12 @@ public class Exploder : MonoBehaviour
 {
     [SerializeField] private int _explosionForce=1500;
 
-    public void Explode(List<Rigidbody> rigidbodies)
+    public void Explode(Cube cube,List<Rigidbody> rigidbodies)
     {       
         foreach (Rigidbody spawnedCube in rigidbodies)
         {
-            spawnedCube.AddExplosionForce(_explosionForce, transform.localPosition, transform.localScale.x);
+            spawnedCube.AddExplosionForce(_explosionForce, cube.transform.localPosition, 
+                                          cube.transform.localScale.x);
         }
     }
 }
