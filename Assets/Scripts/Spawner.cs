@@ -3,36 +3,72 @@ using UnityEngine;
 
 public class Spawner : MonoBehaviour
 {
-    [SerializeField] private float _scaleDecrease = 2;
-    [SerializeField] private int _spawnChanceDecrease = 2;
-    [SerializeField] private int _spawnAmountMin = 2;
-    [SerializeField] private int _spawnAmountMax = 6;
+    [SerializeField] private Cube _cube;
+    [SerializeField] private int _startCubeCount = 3;
 
-    public List<Rigidbody> Spawn(Cube cube)
+    private void Start()
     {
-        int minChance = 0;
-        int maxChance = 100;
+        SpawnFirstCubes();
+    }
 
-        int spawnRoll = Utils.GenerateRandomNumber(minChance, maxChance);
-        int spawnChance = cube.SpawnChance;
+    public List<Rigidbody> Spawn(Cube cube, int spawnAmount, int spawnChance, float scaleDecrease)
+    {
+        List<Rigidbody> spawnedCubesRigidbodies = new List<Rigidbody>();
 
-        if (spawnChance >= spawnRoll)
+        for (int i = 0; i < spawnAmount; i++)
         {
-            int newCubeSpawnChance = spawnChance / _spawnChanceDecrease;
-            int spawnAmount = Utils.GenerateRandomNumber(_spawnAmountMin, _spawnAmountMax);
-
-            List<Rigidbody> spawnedCubesRigidbodies = new List<Rigidbody>();
-
-            for (int i = 0; i < spawnAmount; i++)
-            {
-                Cube newCube = Instantiate(cube, cube.transform.localPosition, cube.transform.rotation);
-                newCube.Init(newCubeSpawnChance, _scaleDecrease);
-                spawnedCubesRigidbodies.Add(newCube.Rigidbody);
-            }
-
-            return spawnedCubesRigidbodies;
+            Cube newCube = Instantiate(cube, RandomIndent(cube.transform.position), cube.transform.rotation);
+            newCube.Init(spawnChance, scaleDecrease);
+            spawnedCubesRigidbodies.Add(newCube.Rigidbody);
+            newCube.Clicked += DisableCube;
         }
 
-        return null;
+        return spawnedCubesRigidbodies;
+    }
+
+    private Vector3 RandomIndent(Vector3 position)
+    {
+        position.y += RandomOne();
+        position.x += RandomOne();
+        position.z += RandomOne();
+
+        return position;
+    }
+
+    private Vector3 RandomIndent()
+    {
+        Vector3 position = Vector3.zero;
+        position.y += RandomOne();
+        position.x += RandomOne();
+        position.z += RandomOne();
+
+        return position;
+    }
+
+    private int RandomOne()
+    {
+        int minValue = -1;
+        int maxValue = 1;
+
+        return Random.Range(minValue, maxValue);
+    }
+
+    private void DisableCube(Cube cube)
+    {
+        cube.Clicked -= DisableCube;
+        Destroy(cube.gameObject);
+    }
+
+    private void SpawnFirstCubes()
+    {
+        int spawnChance = 100;
+        int scaleDecrease = 1;
+
+        for (int i = 0; i < _startCubeCount; i++)
+        {
+            Cube cube = Instantiate(_cube, RandomIndent(), Quaternion.identity);
+            cube.Init(spawnChance, scaleDecrease);
+            cube.Clicked += DisableCube;
+        }
     }
 }

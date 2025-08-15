@@ -1,7 +1,6 @@
 using UnityEngine;
 
 [RequireComponent(typeof(Renderer))]
-
 public class ColorRandomiser : MonoBehaviour
 {  
     private void Awake()

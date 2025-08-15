@@ -7,7 +7,9 @@ public class RaycastTrigger : MonoBehaviour
     
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        int leftMouseButtonIndex = 0;
+
+        if (Input.GetMouseButtonDown(leftMouseButtonIndex))
         {
             Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
@@ -16,6 +18,7 @@ public class RaycastTrigger : MonoBehaviour
                 if (hit.collider.TryGetComponent(out Cube cube))
                 {
                     CubeClicked?.Invoke(cube);
+                    cube.Disable();
                 }
             }
         }
